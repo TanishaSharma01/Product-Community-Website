@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="navbar_left">
+        <header>
+            <a routerLink="/">
+                <h3 class="logo">ReviewApp</h3>
+            </a>
+        </header>
+    </div>
+    <div class="navbar_right">
+        <ul>
+            <!-- <li><a routerLink="/products/search"><button id="nav_writereview">Write review</button></a></li> -->
+            <a *ngIf="loggedIn"><span>Welcome {{user.firstName}}</span></a>
+            <a *ngIf="!loggedIn"><button id="nav_login"  routerLink="login">Login</button></a>
+            <a *ngIf="!loggedIn"><button id="nav_register" routerLink="register">Register</button></a>
+            <a *ngIf="loggedIn" ><button id="nav_logout" class="btn logout_btn" (click)="logout()" routerLink="home">Logout</button></a>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<main>
+
+    <section class="product_detail_section">
+        <h1>{{productData.name}}</h1>
+        <p>Code: {{productData.code}}</p>
+        <p>Brand: {{productData.brand}}</p>
+        <div class="product_rating">
+            <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star"
+                [class.active]="star <= productData.rating">&#9733;</span>
+        </div>
+    </section>
+
+    <section class="product_list_section">
+        <div class="product_list_wrapper">
+            <button class="btn add_review_btn" (click)="addReviewBtnClicked()">ADD
+                REVIEW</button>
+            <h3 class="product_list_section_title">Product reviews <span class="badge">Total:
+                    {{productReviews.length}}</span> </h3>
+            <ul>
+
+                <li class="list_item card" *ngFor="let review of productReviews"
+                    (click)="reviewClicked(review, review.id)">
+                    <div>
+                        <div class="review_title">
+                            <h4><strong>{{review.title}}</strong></h4>
+                            <span class="badge reviewby_badge">by @{{review.createdBy}}</span>
+                            <div class="product_rating">
+                                <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star"
+                                    [class.active]="star <= review.rating">&#9733;</span>
+                            </div>
+                        </div>
+                        <p>{{review.description}}</p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

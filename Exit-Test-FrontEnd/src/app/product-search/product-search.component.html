@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<main>
+    <section class="search_section">
+        <div class="search_hero">
+            <h2>Search for Products</h2>
+            <p>Read and Write Reviews</p>
+        </div>
+        <div>
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search_bar">
+                <div class="search_bar_inputs">
+                    <input type="text" formControlName="name" placeholder="product name...">
+                    <input type="text" formControlName="brand" placeholder="product brand..">
+                    <input type="text" formControlName="code" placeholder="product code...">
+                </div>
+                <button type="submit" class="btn search_btn">Search</button><br>
+                <div *ngIf="name?.dirty">
+                    <p class="input_error" *ngIf="!name?.valid">{{name?.errors?.['message']}}</p>                    
+                </div>
+                <div *ngIf="code?.dirty">
+                    <p class="input_error" *ngIf="!code?.valid">{{code?.errors?.['message']}}</p>
+                </div>
+                <div *ngIf="brand?.dirty">
+                    <p class="input_error" *ngIf="!brand?.valid">{{brand?.errors?.['message']}}</p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="product_list_section">
+        <div class="product_list_wrapper">
+            <h3 class="product_list_section_title" style="color:white">Product List &nbsp; &nbsp;<span class="badge">Total: {{products.length}}</span>
+            </h3>
+            <ul>
+
+                <li class="list_item card" *ngFor="let product of products">
+                    <a [routerLink]="'/product/detail/' + product.code">
+                        <div>
+                            <h4 id="prodname">{{product.name}}</h4>
+                            <div class="rating">Rating
+                                <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star"
+                                    [class.active]="star <= product.rating">&#9733;</span>
+                            </div>
+                            <div class="sub_details">
+                                <span class="badge code_badge">Code: {{product.code}}</span>
+                                <span class="badge brand_badge">Brand: {{product.brand}}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url('src\assets\download.jpg');
+    border: 100px solid transparent;
+  }
+
+  p{
+    color: beige;
+    text-align: center;
+  }
+
+  .container{
+    padding: 50px;
+    text-align: center;
+    font-size: large;
+  }
+
+h2{
+  text-align: center;
+  color: azure;
+}
+
+#search{
+  background-color: gray !important;
+  color:white;
+  margin-left:42%;
+  border: 2px solid lightgray;
+}
+
+#searchicon{
+  color:white !important;
+}
+/* #err{
+  color:red;
+} */

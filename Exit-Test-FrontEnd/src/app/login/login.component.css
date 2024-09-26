@@ -1,0 +1,22 @@
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url('src\assets\dark2.jpg');
+    border: 100px solid transparent;
+  }
+  form {
+    margin: auto;
+    max-width: 700px;
+    background-color: rgb(245, 243, 243);
+    padding: 30px;
+    border-radius: 10px;
+    border: 10px solid #919191;
+  }
+  h2 {
+    margin-left: 250px;
+    font-size: 2em;
+  }
+  button{
+    margin-left: 250px;
+  }

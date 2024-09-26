@@ -1,0 +1,32 @@
+<body>
+<div class="container">
+  <form [formGroup] ="loginform" (ngSubmit)="loginUser()">
+    <h2>Login</h2>
+      <span class="text-danger">{{msg}}</span>
+      <div class="mb-2">
+        <label for="email" class="form-label">Email</label>
+        <br>
+        <input type="text" title="Enter valid email" placeholder="Enter email" class="form-control" [(ngModel)]="user.email" name="email" formControlName="email">
+        <br>
+        <span style="color:red;" *ngIf="emailVal && emailVal.invalid && emailVal.touched">Please enter a valid email, 6-25 characters</span>
+    </div>
+
+    <div class="mb-2">
+      <label for="password" class="form-label">Password</label>
+      <br>
+      <input type="password" title="Enter valid password" placeholder="Enter password" class="form-control" [(ngModel)]="user.password" name="password" formControlName="password">
+      <br>
+      <span style="color:red;" *ngIf="passVal && passVal.invalid && passVal.touched">Please enter a valid password, 4-22 characters</span>
+  </div>
+  
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button [disabled]="loginform.invalid" type="submit" class="btn btn-dark">Login</button>
+      </div>
+    </div>
+    <small style="text-decoration: underline; margin-left: 215px;" [routerLink]="['/register']">New User? Register Here</small>
+  </form>
+</div>
+</body>
+
+<app-footer></app-footer>

@@ -1,0 +1,130 @@
+main{
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url('src\assets\download.jpg');
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+  .review_add_section {
+    max-width: 600px;
+    margin: auto !important;
+    border-radius: 10px;
+    overflow: hidden !important;
+    border: 2px solid white;
+  }
+  .product_detail_section {
+    background-color: skyblue;
+    text-align: center;
+    padding: 1px;
+  
+    .product_title {
+      padding: 10px 0 20px;
+      font-size: 1.8em;
+    }
+  }
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .product_rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    p {
+      margin: 0;
+      padding: 0;
+      margin-right: 10px;
+    }
+  }
+  
+  .review_form {
+    color: aliceblue;
+    padding: 30px 30px;
+    background-color: rgb(74, 74, 74);
+  
+    .form_title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .review_heading{
+      margin-right: 10px !important;
+    }
+
+    .form_control {
+      margin-bottom: 20px;
+      font-size: 1.2em;
+  
+      label {
+        display: block;
+        padding: 10px 0;
+      }
+  
+      input {
+        width: 100%;
+        border: 2px solid lightgray;
+      }
+      .star {
+        padding: 0;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      .star.active {
+        color: orange;
+      }
+  
+      .input_error {
+        font-size: 1rem;
+        color: red !important;
+      }
+  
+      .description {
+        width: 100%;
+        height: 100px;
+        resize: none;
+        border-radius: 5px;
+        padding: 10px;
+        border: 2px solid lightgray;
+      }
+    }
+  
+    .form_btn_wrapper {
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      .submit_btn {
+        background-color: blue;
+        color: white;
+        font-weight: 500;
+        font-size: 1.3em;
+        padding: 10px 30px;
+      }
+  
+      .cancel_btn {
+        background-color: white;
+        font-weight: 500;
+        font-size: 1.3em;
+        padding: 10px 30px;
+      }
+    }
+  }
+  .heading_input {
+    input {
+      font-weight: 600;
+    }
+  }
+  .star {
+    padding: 0;
+    font-size: 1em;
+    cursor: pointer;
+    color: white;
+  }
+  .star.active {
+    color: orange;
+  }
+  

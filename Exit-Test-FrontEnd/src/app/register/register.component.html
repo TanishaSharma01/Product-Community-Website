@@ -1,0 +1,42 @@
+<body>
+<div class="container">
+    <form [formGroup]="registerform" (ngSubmit)="registerUser()">
+      <h2>Register</h2>
+      <p style="color:red">{{msg}}</p>
+      <div class="mb-2">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" title="First name can only contain alphabets, length 2-20" placeholder="Enter first name" [(ngModel)]="user.firstName" class="form-control" name="firstName" formControlName="firstName">
+        
+        <span style="color:red;" *ngIf="fnVal && fnVal.invalid && fnVal.touched">Please enter a valid first name</span>
+    </div>
+  
+    <div class="mb-2">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" title="Last name can only contain alphabets, length 2-20" placeholder="Enter last name" [(ngModel)]="user.lastName" class="form-control" name="lastName" formControlName="lastName">
+      <span style="color:red;" *ngIf="lnVal && lnVal.invalid && lnVal.touched">Please enter a valid last name</span>
+  </div>
+
+  <div class="mb-2">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" title="Enter valid email" placeholder="Enter email" class="form-control" [(ngModel)]="user.email" name="email" formControlName="email">
+    
+    <span style="color:red;" *ngIf="emailVal && emailVal.invalid && emailVal.touched">Please enter a valid email</span>
+</div>
+
+  <div class="mb-2">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" title="Enter valid password" placeholder="Enter password" class="form-control" [(ngModel)]="user.password" name="password" formControlName="password">
+    <span style="color:red;" *ngIf="passVal && passVal.invalid && passVal.touched">Please enter a valid password</span>
+</div>
+
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button [disabled]="registerform.invalid" type="submit" class="btn btn-dark">Register</button>
+        </div>
+      </div>
+      <small style="text-decoration: underline; margin-left: 200px;" [routerLink]="['/login']">Already Registered? Login Here</small>
+    </form>
+  </div>
+</body>
+
+<app-footer></app-footer>

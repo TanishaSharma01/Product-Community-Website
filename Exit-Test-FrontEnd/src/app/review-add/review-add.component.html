@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<main>
+    <section class="review_add_section">
+        <div class="product_detail_section">
+            <h2 id="product_title">Add a Review</h2>
+        </div>
+        <div>
+            <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" class="review_form">
+                <h3 class="form_title">Share your views about the product</h3>
+
+                <div class="form_control heading_input">
+                    <label for="review_heading">Heading  &nbsp;</label>
+                    <input type="text" name="title" id="title" formControlName="title">
+                    <div *ngIf="isSubmitBtnClicked || title?.dirty">
+                        <p class="input_error" style="color:red" *ngIf="!title?.valid">{{title?.errors?.['message']}}</p>
+                    </div>
+                </div>
+                <div class="form_control">
+                    <label for="description">Describe your review &nbsp;</label>
+                    <textarea name="description" id="description" rows="10" class="description"
+                        formControlName="description"></textarea>
+                    <div *ngIf="isSubmitBtnClicked || description?.dirty">
+                        <p class="input_error" style="color:red" *ngIf="!description?.valid">{{description?.errors?.['message']}}</p>
+                    </div>
+                </div>
+                <div class="form_control">
+                    <label for="rating">Rating</label>
+                    <p>
+                        <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" [class.active]="star <= starCounter"
+                            (click)="updateRating(star)">&#9733;</span>
+                    </p>
+                    <div *ngIf="isSubmitBtnClicked || rating?.dirty">
+                        <p class="input_error" style="color:red" *ngIf="!rating?.valid">{{rating?.errors?.['message']}}</p>
+                    </div>
+                </div>
+
+
+                <div class="form_btn_wrapper">
+                    <button type="button" class="btn cancel_btn" (click)="backBtnClicked()">Back</button>
+                    <button [disabled]="reviewForm.invalid" type="submit" class="btn submit_btn">Post Review</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<app-footer></app-footer>

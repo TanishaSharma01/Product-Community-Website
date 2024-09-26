@@ -1,0 +1,121 @@
+main{
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url('src\assets\download.jpg');
+}
+
+h2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+}
+
+p{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+.input_error{
+  color:red;
+  margin-left: 500px;
+}
+.search_section {
+    background-color: rgb(49, 49, 49);
+    padding: 30px 20px;
+    .search_hero {
+      margin-bottom: 10px;
+    }
+}
+
+.search_bar {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .search_bar_inputs {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .input {
+      font-size: 1.2em;
+      padding: 50px;
+      border: 1px solid ;
+    }
+
+    :first-child {
+      flex-grow: 4;
+
+    }
+    :nth-child(2) {
+      flex-grow: 1;
+    }
+    :nth-child(3) {
+      flex-grow: 1;
+
+    }
+}
+
+.search_btn {
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: 600;
+    color: aliceblue;
+    font-size: 1.1em;
+    border: 1px solid darkgreen;
+  }
+
+  .product_list_wrapper {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 30px 100px;
+    .product_list_section_title {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+
+    .list_item {
+      background-color: lightblue;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border: 2px solid gray;
+      .h4 {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: green;
+  }
+  .sub_details {
+    display: flex;
+    gap: 10px;
+    .code_badge {
+      background-color: palevioletred;
+    }
+    .brand_badge {
+      background-color: green;
+    }
+  }
+  
+  #prodname{
+    text-decoration: none;
+  }
+
+  .rating {
+    justify-content: flex-start;
+  }
+  .star { 
+    font-size: 1.5em;
+    cursor: pointer;
+    color: gray;
+  }
+  .star.active {
+    color: orange;
+  }
